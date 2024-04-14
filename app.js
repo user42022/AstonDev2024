@@ -10,7 +10,19 @@ counter2.prop1 = 'val1';
 const counter3 = Object.create(Object.prototype, { prop1: { value: 'val1', enumerable: true, writable: true, configurable: true } });
 const counter4 = Object.assign({}, counter1);
 
-// console.log([counter1, counter2, counter3, counter4]);
+const Counter5 = function (prop) {
+  this.prop = prop
+}
+const counter5 = new Counter5('val1')
+
+class Counter6 {
+  constructor(prop) {
+    this.prop = prop
+  }
+}
+const counter6 = new Counter6('val1')
+
+// console.log([counter1, counter2, counter3, counter4, counter5, counter6]);
 
 const notEnumObj = Object.create(Object.prototype, { prop1: { value: 'val1' } }); // создал обьект с неперечисляемыми свойствами
 
