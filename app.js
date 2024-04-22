@@ -111,17 +111,18 @@ person2.logInfo()
 // 4) Создать класс PersonThree c get и set для поля name и конструктором, сделать класс наследник от класса Person.
 
 class PersonThree {
+    #name
     constructor(name) {
-        this._name = name
+        this.#name = name
     }
 
     set name(value) {
         if (!value) throw new Error('invalid name')
-        this._name = value
+        this.#name = value
     }
 
     get name() {
-        return this._name
+        return this.#name
     }
 }
 const p3 = new PersonThree('Person3')
